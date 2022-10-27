@@ -5,13 +5,13 @@ import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className='grid grid-cols-12 gap-3'>
+    <div>
       <Head>
         <title>Florian Pasquet</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className='ml-32'>
+      <div className='ml-32 mr-3 pt-3'>
         <Component {...pageProps} />
       </div>
       
