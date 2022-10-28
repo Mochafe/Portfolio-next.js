@@ -10,7 +10,7 @@ interface CardInfo{
 export default function Card(info: CardInfo) {
     return(
         <div key={info.key} className="hover:scale-105 hover:shadow-lg transition-all duration-300 border rounded-lg min-h-[450px] max-h-[450px]">
-            <Image src={(info.thumbnail)? info.thumbnail : ""} width="315" height="250" alt="test" className="w-full rounded-t-lg"/>
+            <Image src={(info.thumbnail)? info.thumbnail : ""} width="315" height="250" alt="test" className="w-full rounded-t-lg min-h-[250px] max-h-[250px]"/>
             <h3 className="text-center mt-2 font-semibold text-lg">{info.title}</h3>
 
             <p className="px-3 text-center mt-3 min-h-[80px]">
