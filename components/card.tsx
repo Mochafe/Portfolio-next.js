@@ -17,7 +17,7 @@ export default function Card(info: CardInfo) {
                 {info.description}
             </p>
 
-            <a href={info.link} className="p-3 bg-blue-400 hover:bg-blue-500 transition-all duration-300 rounded-lg border border-blue-500 text-white text-center mx-auto block w-[80px]">Voir</a>
+            <a target="_blank" rel="noreferrer" href={info.link} className="p-2 bg-blue-400 hover:bg-blue-500 transition-all duration-300 rounded-lg border border-blue-500 text-white text-center ml-3 block w-[80px]">Voir</a>
         </div>
     )
 }

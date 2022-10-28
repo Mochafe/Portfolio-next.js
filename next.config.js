@@ -5,7 +5,8 @@ const nextConfig = {
   images: {
     domains: [
       "picsum.photos",
-      "img.itch.zone"
+      "img.itch.zone",
+      "opengraph.githubassets.com"
     ]
   }
 }
