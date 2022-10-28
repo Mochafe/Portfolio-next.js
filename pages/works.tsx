@@ -1,8 +1,20 @@
 import { useState, useEffect } from "react"
 import Card from "../components/card";
 
+
 export default function Works() {
-    const [games, setGames] = useState(null);
+
+    function CardSupport() {
+        if(games !== null && games !== undefined) {
+            let count = 0;
+            return(
+            games.map((game: any) => (
+            <Card key={count++} thumbnail={ game["cover_url"] } title={ game["title"] } description={ game["short_text"] } link={ game["url"] }  />
+            ))
+            )
+        }
+    }
+    const [games, setGames] = useState<[]>([]);
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -11,18 +23,15 @@ export default function Works() {
             res.json().then((games) => {
                 setGames(games);
                 setLoading(false);
-    console.log(games.games[0]);
-
             })
         })
     }, [])
-
 
     return (
         <main>
             <h1 className="font-bold text-center text-2xl">Projets</h1>
             <div className="w-[80%] min-h-[33vh] mx-auto p-4 border rounded-lg grid grid-cols-4 gap-4">
-                <Card thumbnail={(games)? games.games[0].cover_url : ""} title={games.games[0].title} description={games.games[0].short_text} link={games.games[0].url} />
+                { CardSupport() }
             </div>
 
         </main>

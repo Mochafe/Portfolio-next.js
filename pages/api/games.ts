@@ -8,7 +8,7 @@ export default function handler(
 ) {
   fetch("https://itch.io/api/1/zJgbfInBx6rW9asVDLu078dM9jQD3xD0jnbOjWTr/my-games").then(result => {
     result.json().then(resultJson => {
-      res.status(200).json(resultJson);
+      res.status(200).json(resultJson.games);
     }
     )
   }).catch(err => {
