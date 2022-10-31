@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link href="/" className="hidden md:block">
                 <Image className="md:mx-auto mt-3" src="/logo_florian_pasquet.png" width="100" height="73" alt="logo" draggable="false" />
             </Link>
-            <ul className="md:mt-[30vh] w-full flex md:flex-col justify-center md:border-y text-xl">
+            <ul className="md:mt-[30vh] w-full flex md:flex-col justify-center text-xl">
                 <LinkNavbar href="/" name="Accueil" active={active.home}/>
                 <LinkNavbar href="/works" name="Projets" active={active.works}/>
             </ul>
