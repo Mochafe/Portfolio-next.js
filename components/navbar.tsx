@@ -40,7 +40,7 @@ export default function Navbar() {
 
 
     return (
-        <nav className="bg-slate-100 border-t h-24 w-screen md:h-screen md:w-28 fixed bottom-0 flex md:flex-col border-r z-10">
+        <nav className="bg-slate-100 border-t h-16 w-screen md:h-screen md:w-28 fixed bottom-0 flex md:flex-col border-r z-10">
             <Link href="/" className="hidden md:block">
                 <Image className="md:mx-auto mt-3" src="/logo_florian_pasquet.png" width="100" height="73" alt="logo" draggable="false" />
             </Link>
