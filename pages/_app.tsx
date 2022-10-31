@@ -13,8 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <div className='md:ml-32 md:mr-3 pt-3'>
         <Component {...pageProps} />
-      </div>
-      
+      </div>     
     </div>
   )
 }
