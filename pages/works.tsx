@@ -38,7 +38,6 @@ export default function Works() {
         fetch("/api/repos").then((res) => {
             res.json().then(repo => {
                 setRepo(repo);
-                console.log(repo);
             })
         })
         })

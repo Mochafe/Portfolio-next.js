@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className='ml-32 mr-3 pt-3'>
+      <div className='md:ml-32 md:mr-3 pt-3'>
         <Component {...pageProps} />
       </div>
       
