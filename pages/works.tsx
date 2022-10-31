@@ -47,7 +47,7 @@ export default function Works() {
     return (
         <main>
             <h1 className="font-bold text-center text-2xl">Projets</h1>
-            <div className="w-[80%] min-h-[33vh] mx-auto p-4 border rounded-lg grid grid-cols-4 gap-4 ">
+            <div className="w-[90%] min-h-[33vh] mx-auto p-4 border rounded-lg grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                 { CardGames() }
                 { CardRepo() }
             </div>
