@@ -9,7 +9,7 @@ interface CardInfo {
 }
 export default function Card(info: CardInfo) {
     return (
-        <div key={info.key} className="hover:scale-105 hover:shadow-lg transition-all duration-300 border rounded-lg w-fit h-auto flex flex-col justify-between">
+        <div key={info.key} className="hover:scale-105 hover:shadow-lg transition-all duration-300 border rounded-lg w-full h-auto flex flex-col justify-between">
             <div>
                 <Image src={(info.thumbnail) ? info.thumbnail : ""} width="315" height="250" alt="test" className="w-full max-h-max rounded-t-lg" />
             </div>
