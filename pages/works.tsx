@@ -53,6 +53,7 @@ export default function Works() {
         <main>
             <h1 className="font-bold text-center text-2xl">Projets</h1>
             <div className="w-[90%] min-h-[33vh] mb-32 md:mb-0 mx-auto p-4 border rounded-lg grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+                <Card placeholder={true} />
                 { CardGames() }
                 { CardRepo() }
                 <span className="animate-spin">{ (isLoading)? "Loading" : "" }</span>
