@@ -30,16 +30,22 @@ export default function Works() {
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
+        let promises: Promise<Response | void>[] = [];
         setLoading(true);
-        fetch("/api/games").then((res) => {
+        promises[0] = fetch("/api/games").then((res) => {
             res.json().then((games) => {
                 setGames(games);
             });
-        fetch("/api/repos").then((res) => {
+        promises[1] = fetch("/api/repos").then((res) => {
             res.json().then(repo => {
                 setRepo(repo);
             })
         })
+        });
+
+        Promise.all(promises).then(() => {
+            setLoading(false);
+
         })
     }, [])
 
@@ -49,6 +55,7 @@ export default function Works() {
             <div className="w-[90%] min-h-[33vh] mb-32 md:mb-0 mx-auto p-4 border rounded-lg grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                 { CardGames() }
                 { CardRepo() }
+                <span className="animate-spin">{ (isLoading)? "Loading" : "" }</span>
             </div>
 
         </main>
