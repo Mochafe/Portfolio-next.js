@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div>
+    <div className='font-mono'>
       <Head>
         <title>Florian Pasquet</title>
         <link rel="icon" href="/favicon.ico" />
