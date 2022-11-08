@@ -1,42 +1,28 @@
-import type { NextPage } from 'next'
 import Typewriter from "typewriter-effect";
-import LocomotiveScroll from "locomotive-scroll"
-import { useState, useEffect } from 'react';
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { useState, useEffect, useRef } from 'react';
 
 import Image from 'next/image'
 
 
-function  Home() {
-  /*
-  if(document === undefined) {
-    console.log("Undefineddd")
-  }
-  
-  const container = document.getElementById("data-scroll-container");
-
-  if(container !== null) {
-    const scroll = new LocomotiveScroll({
-      el: container,
-      smooth: true
-    });
-*/
-  
-  
+function Home() {
+  const containerRef = useRef(null);
 
   return (
-    <div id="data-scroll-container">
-      <main>
-        <section className='text-6xl ml-44 mt-36'>
-          <h2>Florian Pasquet</h2>
-          <p>Je suis </p><Typewriter options={{
-            strings: ["un développeur", "", ""],
-            autoStart: true,
-            loop: true
-          }} />
-        </section>
-
-      </main>
-    </div>
+    <main data-scroll-container ref={containerRef}>
+      <section className='text-6xl text-center md:text-left md:ml-10 mt-36' data-scroll-section>
+        <h2>Florian Pasquet,</h2>
+        <p>Je fait</p>
+        <Typewriter options={{
+          strings: ["du développement web.", "de la conception d'application.", "du design UI/UX."],
+          autoStart: true,
+          loop: true
+        }} />
+      </section>
+      <section className="mt-[5000px]" data-scroll-section>
+        <p className="text-center text-5xl">Mon domain de prédilection est le back-end notamment en Javascript/Typescript</p>
+      </section>
+    </main>
   )
 }
 
