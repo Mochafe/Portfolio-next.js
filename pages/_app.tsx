@@ -10,10 +10,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Florian Pasquet</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Navbar />
       <div className='md:ml-32 md:mr-3 pt-3'>
         <Component {...pageProps} />
       </div>     
+
     </div>
   )
 }
