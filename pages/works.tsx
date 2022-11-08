@@ -38,16 +38,19 @@ export default function Works() {
     const [games, setGames] = useState<[]>([]);
     const [repos, setRepo] = useState<[]>([]);
     const [isLoading, setLoading] = useState(false);
+    const [placeholder, setPlaceholder] = useState(10);
 
     useEffect(() => {
         setLoading(true);
         fetch("/api/games").then((res) => {
             res.json().then((games) => {
                 setGames(games);
+                setPlaceholder(placeholder - games.length);
             });
         fetch("/api/repos").then((res) => {
             res.json().then(repo => {
                 setRepo(repo);
+                setPlaceholder(placeholder - repo.length);
             setLoading(false);
             })
         })
@@ -60,7 +63,7 @@ export default function Works() {
             <div className="w-[90%] min-h-[33vh] mb-32 md:mb-0 mx-auto p-4 border rounded-lg grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                 { CardGames() }
                 { CardRepo() }
-                { (isLoading)? CardPlaceholder(10) : "" }
+                { (isLoading)? CardPlaceholder(placeholder) : "" }
             </div>
 
         </main>
